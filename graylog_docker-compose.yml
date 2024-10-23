@@ -63,6 +63,8 @@ services:
       # Password: "admin"
       GRAYLOG_ROOT_PASSWORD_SHA2: "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
       GRAYLOG_HTTP_EXTERNAL_URI: "http://172.16.21.108:9000/"
+      GRAYLOG_TIMEZONE: "Europe/Istanbul"
+      TZ: "Europe/Istanbul"
     ports:
       # Graylog web interface and REST API
       - "9000:9000/tcp"
@@ -71,7 +73,17 @@ services:
       # Syslog TCP
       - "5140:5140/tcp"
       # Syslog UDP
+      - "514:514/udp"
       - "5140:5140/udp"
+      - "5149:5149/udp"
+      - "5148:5148/udp"
+      - "5150:5150/udp"
+      - "5158:5158/udp"
+      - "5157:5157/udp"
+      - "5156:5156/udp"
+      - "5151:5151/udp"
+      - "5152:5152/udp"
+      - "5153:5154/udp"
       # GELF TCP
       - "12201:12201/tcp"
       # GELF UDP
